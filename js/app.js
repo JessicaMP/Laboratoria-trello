@@ -31,10 +31,23 @@ function createList(event) {
 
     /* link.addEventListener("click", createCard); */
     titleElement.parentElement.appendChild(link);
+    link.addEventListener('click', newTask);
   }
 }
 
 function begin() {
   addList.addEventListener('click', newList);
   button.addEventListener('click', createList);
+}
+
+function newTask(event) {
+  event.preventDefault();
+  event.target.classList.toggle('display-none');
+  var formu = document.createElement('form');
+  var textArea = document.createElement('textarea');
+  var button = document.createElement('button');
+  button.textContent = 'Añadir';
+  form.parentElement.appendChild(formu);
+  form.parentElement.appendChild(textArea);
+  form.parentElement.appendChild(button);
 }
